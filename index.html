@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
+</html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fetch</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
-<body>
+<body class="bg-light">
     <div class="container">
+        <nav class="navbar navbar-light bg-success">
+        </nav>
         <div class="row">
-            <div class="col-md-12">
-                <h1>Fetch</h1>
+            <div class="col-md-6">
+                <h1 class="font-weight-bold">Fetch</h1>
                 <h3>We made it a thing.</h3>
                 <p>Tell us a few things, and we will help you get your home ready for your new friend. </p>
+
+            </div>
+            <div class="col-md-3">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
 
@@ -24,13 +39,16 @@
             <div class="col-md-9">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Friends</label>
+                        <label class="input-group-text" for="inputGroupSelect01">Available Dogs</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect01">
                         <option selected>Choose a Dog</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
+                        <option value="1">Lab</option>
+                        <option value="2">German Shepard</option>
                         <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                        <option value="6">Six</option>
 
                     </select>
                 </div>
@@ -38,33 +56,34 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <table class="table">
+                <table class="table border border-dark"">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
+                            <th scope="
+                    col">Item</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Misc</th>
+                    </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -72,7 +91,14 @@
         </div>
 
 
+        <nav class="navbar fixed-bottom navbar-light bg-success">
 
+            <p>&copy</p>
+
+
+
+
+        </nav>
 
 
 
