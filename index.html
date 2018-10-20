@@ -35,17 +35,39 @@
 
                             </div>
                             <a href="#!" target="_blank" class="btn btn-danger text-secondary btn-lg m-2">
-                                <span>Sign In</span>
+                                <span id="singInButton">Sign In</span>
+                            </a>
+                            <a href="#!" target="_blank" class="btn btn-danger text-secondary btn-lg m-2">
+                                <span id="createButton">Create Account</span>
                             </a>
                         </form>
+                        <br>
+
                     </div>
                 </div>
-                <div class="mt-4">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        </div>
 
 
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div>
+                    <div class="form-group">
 
+                    </div>
+                    <button type="submit" class="btn btn-danger text-secondary">Sign in</button>
+                </form>
 
-                </div>
             </div>
         </div>
     </div>
@@ -60,7 +82,7 @@
             <div class="col-md-2">
                 <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
                 <a href="#!" class="btn btn-danger btn-lg m-2 text-secondary btn-ht-dl-message">
-                    <span> Submit</span>
+                    <span id='zipCodeButton'> Submit</span>
                 </a>
         </form>
     </div>
