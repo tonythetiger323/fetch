@@ -1,136 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-</html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fetch</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Retro - Bootstrap Theme</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css/bootstrap4-retro.css">
 
 </head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
 
-<body class="bg-light">
-    <div class="container">
-        <nav class="navbar navbar-light bg-success">
-        </nav>
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="font-weight-bold">Fetch</h1>
-                <h3>We made it a thing.</h3>
-                <p>Tell us a few things, and we will help you get your home ready for your new friend. </p>
-                <form>
-                    <h3> Find A Dog Near You! </h3>
-                    <label for="zip">Zip</label>
-                    <input type="text" name="zip" id="zip">
-                    <input type="submit" id="submitZip">
-                </form>
-            </div>
-            <div class="col-md-3">
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
+<body>
+
+
+    <div class="jumbotron bg-primary text-center text-danger mb-0 radius-0">
+        <div class="container">
+            <div class="ht-tm-header">
+                <h1 class="display-1 display-xxl text-uppercase">Fetch</h1>
+                <span class="lead">We made it a thing. </span>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email">
+                                <br>
+                                <input type="text" class="form-control" placeholder="Password">
+
+                            </div>
+                            <a href="#!" target="_blank" class="btn btn-danger text-secondary btn-lg m-2">
+                                <span>Sign In</span>
+                            </a>
+                        </form>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
+                </div>
+                <div class="mt-4">
 
-        <div class="row">
-            <div class="col-md-9">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Available Dogs</label>
-                    </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose a Dog</option>
-                        <option value="1">Lab</option>
-                        <option value="2">German Shepard</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                        <option value="6">Six</option>
 
-                    </select>
+
+
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div id="dogImage"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <table class="table border border-dark"">
-                    <thead>
-                        <tr>
-                            <th scope="
-                    col">Item</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Misc</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-
-        <nav class="navbar fixed-bottom navbar-light bg-success">
-
-            <p>&copy</p>
-
-
-
-
-        </nav>
-
-
-
-
-
-
-
-
-
     </div>
 
 
 
+    <div class="container py-5">
+
+        <form>
+            <h3> Find A Dog Near You! </h3>
+            <p>Give us a few details, and we will help you get your home ready for your new friend.</p>
+            <div class="col-md-2">
+                <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
+                <a href="#!" class="btn btn-danger btn-lg m-2 text-secondary btn-ht-dl-message">
+                    <span> Submit</span>
+                </a>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="dogImage"></div>
+        </div>
+    </div>
 
 
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <table class="table border border-dark table ">
+                <thead>
+                    <tr>
+                        <th scope="
+              <th scope=" col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Link</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
+    </div>
 
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-        crossorigin='anonymous'></script>
-    <script src="API.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
