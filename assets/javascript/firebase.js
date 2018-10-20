@@ -8,3 +8,16 @@ var config = {
     messagingSenderId: "823895897115"
 };
 firebase.initializeApp(config);
+
+var database = firebase.database();
+
+//create a variable referenicing firebase auth reference for convienence
+var fireAuth = firebase.auth();
+//function for account creation
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+});
