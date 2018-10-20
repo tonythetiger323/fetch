@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var database = firebase.database();
+
 //create a variable referenicing firebase auth reference for convienence
 var fireAuth = firebase.auth();
 //function for account creation
