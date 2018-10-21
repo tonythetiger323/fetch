@@ -25,28 +25,30 @@ function validatePasswordInput(input) {
 
 //fucntion to validate zipcode input, per the usps the lowest number a zipcoe is is 00501 and the highest is 99950 https://facts.usps.com/size-and-scope/
 function validateZipCodeInput(input) {
-    if ((input < 00501) || (input > 99950)) {
-        return false;
-
+    var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip);
+    if (isValid)
+        alert('Valid ZipCode');
+    else {
+        alert('Invalid ZipCode');
     }
-    return true;
-}
-//get the email and password submitted by user
-function getUserRegisterInput() {
-    var userEmail = emailId.val().trim();
-    var userPassword = passwordId.val().trim();
-    var userZipCode = zipCodeId.val().trim();
-    if (validatePasswordInput(userPassword) && validateZipCodeInput) {
-        var newUser = {
-            userEmail,
-            userPassword
-        };
-        return newUser;
+    //get the email and password submitted by user
+    function getUserRegisterInput() {
+        var userEmail = emailId.val().trim();
+        var userPassword = passwordId.val().trim();
+        //Even though it isn't required for account creation, we collected zip code as we ill need it later anyways.
+        var userZipCode = zipCodeId.val().trim();
+        if (validatePasswordInput(userPassword) && validateZipCodeInput) {
+            var newUser = {
+                userEmail,
+                userPassword,
+                userZipCode
+            };
+            return newUser;
+        }
     }
-}
 
-//function to clear input fields
-function resetUserRegisterInput() {
-    emailId.val('');
-    passwordId.val('');
-}
+    //function to clear input fields
+    function resetUserRegisterInput() {
+        emailId.val('');
+        passwordId.val('');
+    }

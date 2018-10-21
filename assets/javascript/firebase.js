@@ -15,7 +15,7 @@ var database = firebase.database();
 var fireAuth = firebase.auth();
 
 //function for account creation
-firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
+fireAuth.createUserWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
 
     // Handle Errors here.
     var errorCode = error.code;
