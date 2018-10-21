@@ -52,3 +52,4 @@ function validateZipCodeInput(input) {
         emailId.val('');
         passwordId.val('');
     }
+}

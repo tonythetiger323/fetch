@@ -58,6 +58,6 @@ function bindButtons() {
                 list.appendChild(newImg);
             }
         });
-    })
+    });
 
 }
