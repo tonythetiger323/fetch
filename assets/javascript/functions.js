@@ -1,15 +1,52 @@
 //the functions.js file will contain functions and variables for them to be called withing the firebase.js file
+//create variables for jQuery selectors for convenience
+var emailId = $("#inputEmail4");
+var passwordId = $("#inputPassword4");
+var zipCodeId = $("#inputZip");
 
-//validate email and password before submiting to the database
-function validateUserRegisterInput(input) {
+//validate password before submiting to the database
+//While the browser handles email validation still want javascript validation so the script will dynamicaly dispaly or remove error messages
+emailId.on("input", function (event) {
+    // with every character entry script checks to see if email is not yet valid or it is
+    if (email.validity.valid) {
+        error.innerHTML = '';
+        error.emailId = 'error';
+    }
+}, false);
 
+// Password requirement is 8 characters minimum, 12 max. 1 character must be a capital letter,1 a lower case numner, and 1 has to be a number
+function validatePasswordInput(input) {
+    var passRequire = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
+    if ((!input) || (input.value.match(passRequire))) {
+        return false;
+    }
+    return true;
 }
 
+//fucntion to validate zipcode input, per the usps the lowest number a zipcoe is is 00501 and the highest is 99950 https://facts.usps.com/size-and-scope/
+function validateZipCodeInput(input) {
+    if ((input < 00501) || (input > 99950)) {
+        return false;
+
+    }
+    return true;
+}
 //get the email and password submitted by user
 function getUserRegisterInput() {
-    var userEmail = 
+    var userEmail = emailId.val().trim();
+    var userPassword = passwordId.val().trim();
+    var userZipCode = zipCodeId.val().trim();
+    if (validatePasswordInput(userPassword) && validateZipCodeInput) {
+        var newUser = {
+            userEmail,
+            userPassword
+        };
+        return newUser;
+    }
 }
 
+//function to clear input fields
 function resetUserRegisterInput() {
-
+    emailId.val('');
+    passwordId.val('');
 }
