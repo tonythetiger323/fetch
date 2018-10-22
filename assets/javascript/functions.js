@@ -25,11 +25,14 @@ function validatePasswordInput(input) {
 
 //fucntion to validate zipcode input, per the usps the lowest number a zipcoe is is 00501 and the highest is 99950 https://facts.usps.com/size-and-scope/
 function validateZipCodeInput(input) {
-    var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip);
-    if (isValid)
+    var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(input);
+    if (isValid){
+    //this was a function made by usps, need to edit to not be an alert 
         alert('Valid ZipCode');
-    else {
+        return true,
+   } else {
         alert('Invalid ZipCode');
+        return false;
     }
     //get the email and password submitted by user
     function getUserRegisterInput() {
@@ -43,7 +46,9 @@ function validateZipCodeInput(input) {
                 userPassword,
                 userZipCode
             };
+            console.log(newUser);
             return newUser;
+            
         }
         return undefined;
     }
