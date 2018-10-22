@@ -10,17 +10,18 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
 //create a variable referenicing firebase auth reference for convenience
 var fireAuth = firebase.auth();
 
-//function for account creation
-fireAuth.createUserWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
-
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
+//on click event to get user input to pass into firebase-auth
+$("#regiester-button").on("click", function (event) {
+    event.preventDefault();
+    var user = getUserRegisterInput();
+    console.log(user);
+    if (user) {
+        fireAuth.createUserWithEmailAndPassword(user.userEmail, user.userPassword);
+        resetUserRegisterInput();
+    }
 });
 
 //function for login

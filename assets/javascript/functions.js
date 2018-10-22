@@ -45,6 +45,7 @@ function validateZipCodeInput(input) {
             };
             return newUser;
         }
+        return undefined;
     }
 
     //function to clear input fields
