@@ -44,22 +44,20 @@ function bindButtons() {
                 var dogName = response.petfinder.pet.name.$t;
                 var img = response.petfinder.pet.media.photos.photo[0].$t;
                 var id = response.petfinder.pet.id.$t;
+                console.log(dogName);
+                var newDiv = $("<div>");
+                var newName = $("<a>");
+                newName.text(dogName);
+                newName.attr("id", "name");
+                newName.attr("href", "https://www.petfinder.com/petdetail/" + id)
 
-                var newName = document.createElement('a');
-                var newDiv = document.createElement('div');
-                newName.textContent = dogName;
-                newName.href = 'https://www.petfinder.com/petdetail/' + id;
+                var newImg = $("<img>");
+                newImg.attr("src", img);
+                newImg.attr("alt", "dog image");
 
-                var newImg = document.createElement('img');
-                newImg.src = img;
-
-                var list = document.createElement("div");
-                list.setAttribute("id", "List");
-                document.body.appendChild(list);
-
-                newDiv.appendChild(newName);
-                list.appendChild(newDiv);
-                list.appendChild(newImg);
+                $("#dogImage").append(newDiv);
+                newDiv.append(newImg);
+                newDiv.append(newName);
             }
         });
     });
