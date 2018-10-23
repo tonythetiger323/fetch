@@ -8,7 +8,7 @@
 // API Secret
 // b03023686e2d4d26134af4694ac41b01
 
-// API Status
+// API Status 
 // Active
 //Cat logic Below currently it is set up to display 
 var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable, easier to read
