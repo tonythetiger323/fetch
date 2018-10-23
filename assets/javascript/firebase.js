@@ -13,29 +13,37 @@ var database = firebase.database();
 //create a variable referenicing firebase auth reference for convenience
 var fireAuth = firebase.auth();
 
-//on click event to get user input to pass into firebase-auth
-$("#regiester-button").on("click", function (event) {
+//registration event when user clicks register button
+registerButton.on("click", function (event) {
     event.preventDefault();
     var user = getUserRegisterInput();
     console.log(user);
     if (user) {
-        fireAuth.createUserWithEmailAndPassword(user.userEmail, user.userPassword);
+        firebase.auth().createUserWithEmailAndPassword(user.userEmail, user.userPassword).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
         resetUserRegisterInput();
+    }
+    event.stopPropagation();
+});
+
+// sign-in event
+signInButton.on("click", function (event) {
+    event.preventDefault();
+    var user = getSignInInput();
+    console.log(user);
+    if (user) {
+        firebase.auth().signInWithEmailAndPassword(user.email, user.password).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+        console.log("You are signed in");
+
     }
 });
 
-//function for login
-fireAuth.signInWithEmailAndPassword(email, password).catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-});
-
-//function for logout
-//important FYI, per firebase documenation the user account doens't actualy get pushed to the database until they sign out for the first time
-fireAuth.signOut().then(function () {
-    // Sign-out successful.
-}).catch(function (error) {
-    // An error happened.
-});

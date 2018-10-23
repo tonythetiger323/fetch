@@ -2,8 +2,10 @@
 //create variables for jQuery selectors for convenience
 var emailId = $("#inputEmail4");
 var passwordId = $("#inputPassword4");
-var zipCodeId = $("#inputZip");
-
+var registerButton = $("#register-button");
+var signInEmail = $("#signInEmail");
+var signInPassword = $("#signInPassword");
+var signInButton = $("#signInButton");
 //validate password before submiting to the database
 //While the browser handles email validation still want javascript validation so the script will dynamicaly dispaly or remove error messages
 emailId.on("input", function (event) {
@@ -16,46 +18,48 @@ emailId.on("input", function (event) {
 
 // Password requirement is 8 characters minimum, 12 max. 1 character must be a capital letter,1 a lower case numner, and 1 has to be a number
 function validatePasswordInput(input) {
-    var passRequire = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/;
-    if ((!input) || (input.value.match(passRequire))) {
-        return false;
+    var passRequire = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/.test(input);
+    if (passRequire) {
+        return true;
     }
-    return true;
+    return false;
 }
 
-//fucntion to validate zipcode input, per the usps the lowest number a zipcoe is is 00501 and the highest is 99950 https://facts.usps.com/size-and-scope/
-function validateZipCodeInput(input) {
-    var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(input);
-    if (isValid){
-    //this was a function made by usps, need to edit to not be an alert 
-        alert('Valid ZipCode');
-        return true,
-   } else {
-        alert('Invalid ZipCode');
-        return false;
-    }
-    //get the email and password submitted by user
-    function getUserRegisterInput() {
-        var userEmail = emailId.val().trim();
-        var userPassword = passwordId.val().trim();
-        //Even though it isn't required for account creation, we collected zip code as we ill need it later anyways.
-        var userZipCode = zipCodeId.val().trim();
-        if (validatePasswordInput(userPassword) && validateZipCodeInput) {
-            var newUser = {
-                userEmail,
-                userPassword,
-                userZipCode
-            };
-            console.log(newUser);
-            return newUser;
-            
-        }
-        return undefined;
-    }
+//get the email and password submitted by user for registration
+function getUserRegisterInput() {
+    var userEmail = emailId.val().trim();
+    var userPassword = passwordId.val().trim();
+    if (validatePasswordInput(userPassword)) {
+        var newUser = {
+            "userEmail": userEmail,
+            "userPassword": userPassword
+        };
+        console.log(newUser);
+        return newUser;
 
-    //function to clear input fields
-    function resetUserRegisterInput() {
-        emailId.val('');
-        passwordId.val('');
     }
+    return undefined;
+
 }
+
+//function to clear registration input fields
+function resetUserRegisterInput() {
+    emailId.val('');
+    passwordId.val('');
+    zipCodeId.val('');
+}
+
+//function to get sign in input
+function getSignInInput() {
+    var email = signInEmail.val().trim();
+    var password = signInPassword.val().trim();
+    var signInUser = {
+        "email": email,
+        "password": password
+    };
+    console.log(signInUser);
+    return signInUser;
+
+}
+
+
