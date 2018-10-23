@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Shrikhand" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css/bootstrap4-retro.css">
 
+
 </head>
 
 <body>
@@ -29,43 +30,31 @@
                     <div class="col-md-4">
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" id="signInEmail">
+                                <input type="email" class="form-control" placeholder="Email" id="emailId" required>
                                 <br>
-                                <input type="password" class="form-control" placeholder="Password" id="signInPassword">
+                                <input type="password" class="form-control" placeholder="Password" id="passwordId"
+                                    required>
 
                             </div>
                             <button type="submit" class="btn btn-danger text-secondary" id="signInButton">Sign In</button>
-                            <button type="submit" class="btn btn-danger text-secondary">Create Account</button>
+                            <button type="submit" class="btn btn-danger text-secondary" id="createAccountButton">Create
+                                Account</button>
                         </form>
+                        <p>If you have an account, enter email and password and click sign in. If you'd like to create
+                            and account please enter your email and desired password and click create account.
+                            Password must be at least charachers, have 1 capital letter, 1 lower case letter, and 1
+                            number.</p>
                         <br>
 
                     </div>
                 </div>
-                <form>
-                    <div class="form-row">
-                        <div class="col-md-3"></div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-                    <button type="submit" class="btn btn-danger text-secondary" id="register-button">Register</button>
-                </form>
-
             </div>
         </div>
     </div>
 
 
 
-    <div class="container py-5">
+    <div class="container py-5" id="userInterface">
 
         <form>
             <h3> Find A Dog Near You! </h3>
@@ -91,8 +80,8 @@
             <table class="table border border-dark table ">
                 <thead>
                     <tr>
-                        <th scope="
-                      <th scope=" col">Product Name</th>
+
+                        <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Brand</th>
                         <th scope="col">Link</th>
@@ -152,7 +141,7 @@
 
     <!-- our own js files -->
     <script src="./assets/javascript/functions.js"></script>
-    <!-- <script src="./assets/javascript/API.js"></script> -->
+    <script src="./assets/javascript/API.js"></script>
     <script src="./assets/javascript/firebase.js"></script>
 </body>
 

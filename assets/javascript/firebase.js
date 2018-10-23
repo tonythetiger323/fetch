@@ -14,18 +14,18 @@ var database = firebase.database();
 var fireAuth = firebase.auth();
 
 //registration event when user clicks register button
-registerButton.on("click", function (event) {
+createAccountButton.on("click", function (event) {
     event.preventDefault();
-    var user = getUserRegisterInput();
+    var user = getUserInput();
     console.log(user);
     if (user) {
-        firebase.auth().createUserWithEmailAndPassword(user.userEmail, user.userPassword).catch(function (error) {
+        firebase.auth().createUserWithEmailAndPassword(user.email, user.password).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
         });
-        resetUserRegisterInput();
+        resetUserInput();
     }
     event.stopPropagation();
 });
@@ -33,7 +33,7 @@ registerButton.on("click", function (event) {
 //sign in event
 signInButton.on("click", function (event) {
     event.preventDefault();
-    var user = getSignInInput();
+    var user = getUserInput();
     console.log(user);
     if (user) {
         firebase.auth().signInWithEmailAndPassword(user.email, user.password).catch(function (error) {
@@ -44,6 +44,14 @@ signInButton.on("click", function (event) {
         });
     }
     console.log("You are signed in");
-    resetSignInInput();
+    resetUserInput();
+    var currentUser = fireAuth.currentUser;
+    console.log(currentUser);
+
+    var signedInAs = $("<p>").text("You are currently signed in as " + currentUser.email);
+
+    userInterface.prepend(signedInAs);
 });
+
+
 
