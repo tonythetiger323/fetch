@@ -11,6 +11,9 @@
 // API Status
 // Active
 
+//dog logic Below currently it is set up to display 
+=======
+
 
 var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable, easier to read
 
@@ -62,57 +65,6 @@ function bindButtons() {
     });
 
 }
-//Cat logic Below currently it is set up to display 
-var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable, easier to read
-
-// the next line and function set up the button in our html to be clickable and reactive 
-$("#zipCodeButton").on("click", function () {
-    bindButtons(event);
-    $("form").trigger("reset");
-})
-
-function bindButtons() {
-    event.preventDefault();
-    var zip = $("#zip").val(); // this line gets the zip code from the form entry
-    var url = 'http://api.petfinder.com/pet.getRandom';
-    console.log(zip);
-    // Within $.ajax{...} is where we fill out our query 
-    $.ajax({
-        url: url,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            key: apiKey,
-            animal: 'dog',
-            'location': zip,
-            output: 'basic',
-            format: 'json'
-        },
-        // Here is where we handle the response we got back from Petfinder
-        success: function (response) {
-            console.log(response); // debugging
-            var catName = response.petfinder.pet.name.$t;
-            var img = response.petfinder.pet.media.photos.photo[0].$t;
-            var id = response.petfinder.pet.id.$t;
-            console.log(catName);
-            var newDiv = $("<div>");
-            var newName = $("<a>");
-            newName.text(catName);
-            newName.attr("id", "name");
-            newName.attr("href", "https://www.petfinder.com/petdetail/" + id)
-
-            var newImg = $("<img>");
-            newImg.attr("src", img);
-            newImg.attr("alt", "cat image");
-
-            $("body").append(newDiv);
-            newDiv.append(newImg);
-            newDiv.append(newName);
-
-
-        }
-    });
-}
 
 //Dog Food Logic below
 // Event listener for our cat-button
@@ -143,9 +95,9 @@ $("#zipCodeButton").on("click", function () {
             catImage.attr("alt", "cat image");
             priceTag.attr("id", "price")
             // Prepending the catImage to the images div
-            $("tbody").prepend(price);
-            $("tbody").prepend(catImage);
-            $("tbody").prepend(priceTag);
+            $("td").prepend(priceTag);
+            $("td").prepend(price);
+            $("td").prepend(catImage);
         });
 });
 

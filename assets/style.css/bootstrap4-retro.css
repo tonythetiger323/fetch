@@ -176,7 +176,11 @@
   
   img {
     vertical-align: middle;
-    border-style: none; }
+    border-style: none;
+    height: 200px;
+    width: 200px
+   }
+
   
   svg {
     overflow: hidden;
