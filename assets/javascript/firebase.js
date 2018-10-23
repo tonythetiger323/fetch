@@ -30,7 +30,7 @@ registerButton.on("click", function (event) {
     event.stopPropagation();
 });
 
-// sign-in event
+//sign in event
 signInButton.on("click", function (event) {
     event.preventDefault();
     var user = getSignInInput();
@@ -42,8 +42,8 @@ signInButton.on("click", function (event) {
             var errorMessage = error.message;
             // ...
         });
-        console.log("You are signed in");
-
     }
+    console.log("You are signed in");
+    resetSignInInput();
 });
 

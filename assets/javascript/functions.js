@@ -46,7 +46,6 @@ function getUserRegisterInput() {
 function resetUserRegisterInput() {
     emailId.val('');
     passwordId.val('');
-    zipCodeId.val('');
 }
 
 //function to get sign in input
@@ -61,5 +60,13 @@ function getSignInInput() {
     return signInUser;
 
 }
+
+//function to reset sign in input
+function resetSignInInput() {
+    signInEmail.val('');
+    signInPassword.val('');
+
+}
+
 
 
