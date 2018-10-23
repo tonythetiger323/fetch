@@ -12,7 +12,7 @@
 // Active
 
 //dog logic Below currently it is set up to display 
-=======
+
 
 
 var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable, easier to read
@@ -21,7 +21,7 @@ var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable
 document.addEventListener('DOMContentLoaded', bindButtons);
 
 function bindButtons() {
-    document.getElementById('submitZip').addEventListener('click', function (event) {
+    document.getElementById('zipCodeButton').addEventListener('click', function (event) {
         event.preventDefault();
         var zip = document.getElementById('zip').value; // this line gets the zip code from the form entry
         var url = 'http://api.petfinder.com/pet.getRandom';
@@ -88,16 +88,16 @@ $("#zipCodeButton").on("click", function () {
             var price = response.products[2].maximumPrice;
             console.log(price);
             // Creating and storing an image tag
-            var catImage = $("<img>");
+            var dogImage = $("<img>");
             var priceTag = $("<h1>")
-            // Setting the catImage src attribute to imageUrl
-            catImage.attr("src", imageUrl);
-            catImage.attr("alt", "cat image");
+            // Setting the dogImage src attribute to imageUrl
+            dogImage.attr("src", imageUrl);
+            dogImage.attr("alt", "cat image");
             priceTag.attr("id", "price")
-            // Prepending the catImage to the images div
+            // Prepending the dogImage to the images div
             $("td").prepend(priceTag);
             $("td").prepend(price);
-            $("td").prepend(catImage);
+            $("td").prepend(dogImage);
         });
 });
 
