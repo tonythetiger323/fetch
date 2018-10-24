@@ -52,6 +52,7 @@ signInButton.on("click", function (event) {
 
     userInterface.prepend(signedInAs);
 });
+$("#zipCodeButton").on("click", function () {
 
-
-
+    database.ref().push("#dogImage");
+})

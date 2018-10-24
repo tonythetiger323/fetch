@@ -18,52 +18,53 @@
 var apiKey = '977bb0c4a15623aed66ba3e238ac26bc'; // assign our key to a variable, easier to read
 
 // the next line and function set up the button in our html to be clickable and reactive 
-document.addEventListener('DOMContentLoaded', bindButtons);
+$("#zipCodeButton").on("click", function () {
+    bindButtons();
+});
 
 function bindButtons() {
-    document.getElementById('zipCodeButton').addEventListener('click', function (event) {
-        event.preventDefault();
-        var zip = document.getElementById('zip').value; // this line gets the zip code from the form entry
-        var url = 'https://api.petfinder.com/pet.getRandom';
+    event.preventDefault();
+    var zip = $("#zip").val(); // this line gets the zip code from the form entry
+    var url = 'https://api.petfinder.com/pet.getRandom';
 
-        // Within $.ajax{...} is where we fill out our query 
-        $.ajax({
-            url: url,
-            jsonp: "callback",
-            dataType: "jsonp",
-            data: {
-                key: apiKey,
-                animal: 'dog',
-                'location': zip,
-                output: 'basic',
-                format: 'json'
-            },
-            // Here is where we handle the response we got back from Petfinder
-            success: function (response) {
-                console.log(response); // debugging
-                var dogName = response.petfinder.pet.name.$t;
-                var img = response.petfinder.pet.media.photos.photo[0].$t;
-                var id = response.petfinder.pet.id.$t;
-                console.log(dogName);
-                var newDiv = $("<div>");
-                var newName = $("<a>");
-                newName.text(dogName);
-                newName.attr("id", "name");
-                newName.attr("href", "https://www.petfinder.com/petdetail/" + id);
-                newName.attr("target", "_blank");
+    // Within $.ajax{...} is where we fill out our query 
+    $.ajax({
+        url: url,
+        jsonp: "callback",
+        dataType: "jsonp",
+        data: {
+            key: apiKey,
+            animal: 'dog',
+            'location': zip,
+            output: 'basic',
+            format: 'json'
+        },
+        // Here is where we handle the response we got back from Petfinder
+        success: function (response) {
+            console.log(response); // debugging
+            var dogName = response.petfinder.pet.name.$t;
+            var img = response.petfinder.pet.media.photos.photo[0].$t;
+            var id = response.petfinder.pet.id.$t;
+            console.log(dogName);
+            var newDiv = $("<div id='dogDiv'>");
+            var newName = $("<a>");
+            newName.text(dogName);
+            newName.attr("id", "name");
+            newName.attr("href", "https://www.petfinder.com/petdetail/" + id);
+            newName.attr("target", "_blank");
 
-                var newImg = $("<img>");
-                newImg.attr("src", img);
-                newImg.attr("alt", "dog image");
+            var newImg = $("<img>");
+            newImg.attr("src", img);
+            newImg.attr("alt", "dog image");
 
-                $("#dogImage").append(newDiv);
-                newDiv.append(newImg);
-                newDiv.append(newName);
-            }
-        });
+            $("#dogImage").append(newDiv);
+            newDiv.append(newImg);
+            newDiv.append(newName);
+        }
     });
+};
 
-}
+
 
 //Dog Food Logic below
 // Event listener for our cat-button
