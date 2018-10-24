@@ -14,7 +14,7 @@ function validatePasswordInput(input) {
     if (passRequire) {
         return true;
     }
-
+    $("#error").text("Please enter a valid password");
     return false;
 }
 
