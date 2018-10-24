@@ -4,7 +4,10 @@ var emailId = $("#emailId");
 var passwordId = $("#passwordId");
 var signInButton = $("#signInButton");
 var createAccountButton = $("#createAccountButton");
+var hide = $("#hide");
 var userInterface = $("#userInterface");
+var signOutButton = $("#signOutButton");
+var pTag = $("<p>");
 // Password requirement is 8 characters minimum, 12 max. 1 character must be a capital letter,1 a lower case numner, and 1 has to be a number
 function validatePasswordInput(input) {
     var passRequire = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/.test(input);
@@ -31,6 +34,7 @@ function getUserInput() {
     return undefined;
 
 }
+
 
 //function to clear registration input fields
 function resetUserInput() {

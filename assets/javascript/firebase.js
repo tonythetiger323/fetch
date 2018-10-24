@@ -19,14 +19,22 @@ createAccountButton.on("click", function (event) {
     var user = getUserInput();
     console.log(user);
     if (user) {
-        firebase.auth().createUserWithEmailAndPassword(user.email, user.password).catch(function (error) {
+        fireAuth.createUserWithEmailAndPassword(user.email, user.password).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
         });
         resetUserInput();
+
     }
+    var currentUser = fireAuth.currentUser;
+    console.log(currentUser);
+
+    var signedInAs = pTag.html('You are currently signed in as ' + currentUser.email + ' ' + '<button type="submit" class="btn btn-danger text-secondary" id="signOutButton">Sign Out</button>');
+
+    userInterface.append(signedInAs);
+    hide.hide();
     event.stopPropagation();
 });
 
@@ -36,7 +44,7 @@ signInButton.on("click", function (event) {
     var user = getUserInput();
     console.log(user);
     if (user) {
-        firebase.auth().signInWithEmailAndPassword(user.email, user.password).catch(function (error) {
+        fireAuth.signInWithEmailAndPassword(user.email, user.password).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -48,9 +56,25 @@ signInButton.on("click", function (event) {
     var currentUser = fireAuth.currentUser;
     console.log(currentUser);
 
-    var signedInAs = $("<p>").text("You are currently signed in as " + currentUser.email);
+    var signedInAs = pTag.html('You are currently signed in as ' + currentUser.email + ' ' + '<button type="submit" class="btn btn-danger text-secondary" id="signOutButton">Sign Out</button>');
 
-    userInterface.prepend(signedInAs);
+    userInterface.append(signedInAs);
+    hide.hide();
+    event.stopPropagation();
+});
+
+//sign out event
+$("#userInterface").on("click", signOutButton, function (event) {
+    console.log("button clicked");
+    event.preventDefault();
+    fireAuth.signOut().then(function () {
+        // Sign-out successful.
+    }).catch(function (error) {
+        // An error happened.
+    });
+    console.log("You have been signed out");
+    hide.show();
+    userInterface.html("");
 });
 
 
