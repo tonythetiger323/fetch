@@ -71,7 +71,9 @@ $("#zipCodeButton").on("click", function () {
 
     // Storing our Shopt.com API URL for a random dog food image
     var food = "dog food";
+
     var queryURL = "https://cors-anywhere.herokuapp.com/https://api.shop.com/AffiliatePublisherNetwork/v1/products?publisherID=erithr&locale=en_US&perPage=10&term=dogfood&apikey=l7xxc75c28da1f164896adcd222d338aa71c"
+
 
     // Perfoming an AJAX GET request to our queryURL
     $.ajax({
@@ -109,6 +111,7 @@ $("#zipCodeButton").on("click", function () {
             var dogImage3 = $("<img>");
             var priceTag3 = $("<h1>");
             // Setting the dogImage src attribute to imageUrl
+
             dogImage1.attr("src", imageUrl1);
             dogImage1.attr("alt", "dog image");
             priceTag1.attr("id", "price");
@@ -123,6 +126,7 @@ $("#zipCodeButton").on("click", function () {
             dogImage3.attr("alt", "dog image");
             priceTag3.attr("id", "price");
             priceTag3.attr("href", itemURL3);
+
 
             // Prepending the dogImage to the images div
             $("#test1").append(price1);
