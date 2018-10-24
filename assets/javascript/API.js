@@ -49,7 +49,8 @@ function bindButtons() {
                 var newName = $("<a>");
                 newName.text(dogName);
                 newName.attr("id", "name");
-                newName.attr("href", "https://www.petfinder.com/petdetail/" + id)
+                newName.attr("href", "https://www.petfinder.com/petdetail/" + id);
+                newName.attr("target", "_blank");
 
                 var newImg = $("<img>");
                 newImg.attr("src", img);
@@ -132,19 +133,19 @@ $("#zipCodeButton").on("click", function () {
             $("#test1").append(priceTag1);
             $("#test2").append(brand1);
             $("#test0").append(dogImage1);
-            $("#test3").append("<a href=" + itemURL1 + ">Buy HERE!</a>")
+            $("#test3").append("<a href=" + itemURL1 + " target='_blank'>Buy HERE!</a>")
             //2nd row of food 
             $("#price2").append(price2);
             $("#price2").append(priceTag2);
             $("#brand2").append(brand2);
             $("#image2").append(dogImage2);
-            $("#link2").append("<a href=" + itemURL2 + ">Buy HERE!</a>")
+            $("#link2").append("<a href=" + itemURL2 + " target='_blank'>Buy HERE!</a>")
             //3rd row of food
             $("#price3").append(price3);
             $("#price3").append(priceTag3);
             $("#brand3").append(brand3);
             $("#image3").append(dogImage3);
-            $("#link3").append("<a href=" + itemURL3 + ">Buy HERE!</a>")
+            $("#link3").append("<a href=" + itemURL3 + " target='_blank'>Buy HERE!</a>")
         });
 });
 
