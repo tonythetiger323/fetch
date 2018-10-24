@@ -76,6 +76,7 @@ $("#userInterface").on("click", signOutButton, function (event) {
     hide.show();
     userInterface.html("");
 });
+$("#zipCodeButton").on("click", function () {
 
-
-
+    database.ref().push("#dogImage");
+})
