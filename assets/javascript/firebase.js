@@ -52,7 +52,15 @@ signInButton.on("click", function (event) {
 
     userInterface.prepend(signedInAs);
 });
-$("#zipCodeButton").on("click", function () {
 
-    database.ref().push("#dogImage");
+
+// tried to get this to work, its working in that the button runs and captures something but i dont think im pulling the div data. Currently im trying to pull everything that is in the #dogImage div to push into firebase. but im not able to capture that data. not sure if its because i have the content being created dynamically so there is nothing to pull from. Or if having our functions sepereated is causing problems. 
+$(document).ready(function () {
+    $("#zipCodeButton").on("click", function () {
+        var dogsave = $("#dogDiv").val();
+        console.log(dogsave);
+        console.log();
+        database.ref().push("#dogImage");
+    })
 })
+
