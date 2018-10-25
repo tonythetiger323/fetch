@@ -45,6 +45,11 @@ function bindButtons() {
             var dogName = response.petfinder.pet.name.$t;
             var img = response.petfinder.pet.media.photos.photo[0].$t;
             var id = response.petfinder.pet.id.$t;
+            var dogObj = {
+                dogName,
+                img,
+                id
+            };
             console.log(dogName);
             var newDiv = $("<div id='dogDiv'>");
             var newName = $("<a>");
@@ -60,9 +65,11 @@ function bindButtons() {
             $("#dogImage").append(newDiv);
             newDiv.append(newImg);
             newDiv.append(newName);
+
+            addDog(dogObj);
         }
     });
-};
+}
 
 
 
@@ -146,7 +153,9 @@ $("#zipCodeButton").on("click", function () {
             $("#price3").append(priceTag3);
             $("#brand3").append(brand3);
             $("#image3").append(dogImage3);
-            $("#link3").append("<a href=" + itemURL3 + " target='_blank'>Buy HERE!</a>")
+            $("#link3").append("<a href=" + itemURL3 + " target='_blank'>Buy HERE!</a>");
+
+
         });
 });
 
