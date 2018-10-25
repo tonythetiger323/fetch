@@ -24,8 +24,8 @@ function getUserInput() {
     var password = passwordId.val();
     if (validatePasswordInput(password)) {
         var user = {
-            "email": email,
-            "password": password
+            email,
+            password
         };
         console.log(user);
         return user;
